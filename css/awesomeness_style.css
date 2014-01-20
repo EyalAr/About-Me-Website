@@ -1,0 +1,217 @@
+/*
+font-family: 'Zeyada', cursive;
+font-family: 'Nothing You Could Do', cursive;
+font-family: 'Gruppo', cursive;
+*/
+
+.full-height{
+    height:100%;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.nested-container{
+    margin-left: -7px;
+}
+
+.nested-container .row{
+    margin-left: -30px;
+}
+
+.centered{
+    margin: 0 auto;
+}
+
+.vertical-align-wrapper{
+    display: table;
+}
+
+.vertical-align{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.nodisp{
+    display: none;
+}
+
+.internal-nav-next{
+    position: relative;
+    top: -3em;
+}
+
+.internal-nav-next i{
+    font-size: 3em;
+    color: #505968;
+}
+
+.about-table{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.about-table .at-row{
+    display: table-row;
+    width: 100%;
+    height: 50%;
+    vertical-align: middle;
+}
+
+.about-table .at-cell{
+    display: table-cell;
+    vertical-align: middle;
+    width: 33.333%;
+}
+
+.downloads-table{
+    display: table;
+    width: 100%
+}
+
+.downloads-table div:first-of-type{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 33%;
+}
+
+.downloads-table div:last-of-type{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#loading{
+    background-color: #b8b8b8;
+    position: absolute;
+    z-index: 9999999;
+}
+
+#nav-welcome{
+ background-color: #96abbb;   
+}
+
+#nav-welcome h1{
+    font-family: 'Gruppo', cursive;
+    font-size: 8em;
+    font-weight: 400;
+    color: #333942;
+}
+
+#nav-welcome h2{
+    font-family: 'Zeyada', cursive;
+    font-size: 3.5em;
+    font-weight: 400;
+    color: #505968;
+}
+
+#nav-welcome h3{
+    font-family: 'Gruppo', cursive;
+    font-size: 3em;
+    font-weight: 600;
+    color: #505968;
+}
+
+#nav-welcome h4{
+    font-family: 'Gruppo', cursive;
+    font-size: 2em;
+    font-weight: 400;
+    color: #505968;
+    padding-left: 10px;
+}
+
+#nav-menu{
+    background-color: #333942;
+    padding: 50px 0;
+}
+
+#nav-menu h1{
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 2em;
+    font-weight: 400;
+    color: #96abbb;
+}
+
+#nav-about{
+    background-color: #a1a1a1;
+}
+
+#nav-about .alt-content{
+    font-family: 'Gruppo', cursive;
+    font-size: 2em;
+    font-weight: 400;
+    color: #333942;
+    text-align: center;
+}
+
+#nav-contact{
+    background-color: #9ecd74;
+}
+
+#nav-contact    h1,
+#nav-discover   h1,
+#nav-download   h1,
+#nav-about      h1{
+    font-size: 8em;
+    font-weight: 400;
+    color: #505968;
+}
+
+#nav-about h1{
+    text-align: center;
+}
+
+#nav-download{
+    background-color: #cdb574;
+}
+
+#nav-download h2{
+    font-family: 'Gruppo', cursive;
+    font-size: 5em;
+    font-weight: 400;
+    color: #505968;
+}
+
+#nav-download h2 a{
+    color: #505968;
+}
+
+#nav-download h2 a:hover{
+    text-decoration: none;
+}
+
+#nav-discover{
+    background-color: #c280a9;
+}
+
+#nav-email{
+    background-color: #3b3d33;
+}
+
+#nav-email h1{
+    font-family: 'Gruppo', cursive;
+    font-size: 6em;
+    font-weight: 400;
+    color: #9ecd74;
+    line-height: 3em;
+    display: inline;
+}
+
+#nav-email a{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px 9px;
+    color: #9ecd74;
+}
+
+#nav-footer{
+    background-color: #2e2f27;
+    font-family: 'Gruppo', cursive;
+    font-size: 2em;
+    font-weight: 400;
+    color: #9ecd74;
+}
