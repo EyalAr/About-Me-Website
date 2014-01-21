@@ -1,7 +1,9 @@
 // We need the hash to determine in-page location:
 var hash = window.location.hash;
 
-// **************************************
+// we need to keep the autoscroll timeout so we can clear it:
+var autoscroll_t;
+
 // Preload images;
 (function(images_urls){
     var images = [];
@@ -13,29 +15,8 @@ var hash = window.location.hash;
 })([
 'imgs/me.png',
 ]);
-// **************************************
 
-var doWelcome = function(){
-    if (hash != ""){
-        $("#loading").hide();
-        $("#nav-welcome").show();
-        var target = /#(.+)/.exec(hash)[1];
-        var target_id = "nav-" + target;
-        if (target == "email"){
-            emailToggle(true);
-            target_id = "nav-contact";
-        }
-        scrollBottomToElement("#" + target_id);
-    }
-    else{
-        $("#loading").fadeOut(1000);
-        $("#nav-welcome").fadeIn(1000);
-        // I'm not fading in with a callback because I want the
-        // fades to occur together.
-    }
-}
 
-// **************************************
 // Load fonts from Google:
 WebFontConfig = {
     google: { families: ['Zeyada::latin', 'Nothing+You+Could+Do::latin', 'Gruppo::latin']},
@@ -50,36 +31,15 @@ WebFontConfig = {
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
 })();
-// **************************************
 
-var emailToggle = function(show){
-    if (show){
-        $("#nav-contact-icons").fadeToggle(500, function(){
-            $("#nav-email").fadeToggle(500);
-        });
-    }
-    else{
-        $("#nav-email").fadeToggle(500, function(){
-            $("#nav-contact-icons").fadeToggle(500);
-        });
-    }
-}
-
-var scrollBottomToElement = function(selector, cb){
-    var scroll_top = $(selector).offset().top
-    + $(selector).outerHeight()
-    - $(window).height();
-    $("body, html").animate({
-        scrollTop: scroll_top
-    },500, cb);
-}
-
+// When DOM is ready:
 $(function(){
+
     $(".internal-nav").click(function(e){
         e.preventDefault();
         var target = /#(.+)/.exec($(this).attr("href"))[1];
         var target_id = "nav-" + target;
-        scrollBottomToElement("#" + target_id, function(){
+        scrollBottomToElement("#" + target_id, 500, function(){
             window.location.hash = target;
         });
     });
@@ -122,6 +82,18 @@ $(function(){
             alt_el.fadeOut(100, function(){
                 prm_el.fadeIn(100);
             });
+        }
+    });
+
+    $(window).scroll(function(){
+        clearTimeout(autoscroll_t);
+        // only set the timeout if the footer is not fully visible:
+        var footer_bot = $("#nav-footer").offset().top + $("#nav-footer").outerHeight();
+        var scroll_bot = $(document).scrollTop() + $(window).height();
+        if (footer_bot > scroll_bot){
+            autoscroll_t = setTimeout(function(){
+                autoScroll(100, 200);
+            }, 1000);
         }
     });
 });
