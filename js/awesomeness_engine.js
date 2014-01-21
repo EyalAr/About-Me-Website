@@ -96,4 +96,11 @@ $(function(){
             }, 1000);
         }
     });
+
+    $(".popoverize").popover({
+        trigger: 'hover',
+        container: 'body',
+        placement: 'auto bottom'
+    });
+
 });
