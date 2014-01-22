@@ -86,7 +86,7 @@ font-family: 'Gruppo', cursive;
 
 #loading{
     background-color: #b8b8b8;
-    position: absolute;
+    position: fixed;
     z-index: 9999999;
 }
 
