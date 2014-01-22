@@ -5,8 +5,6 @@
 */
 var doWelcome = function(){
     if (hash != ""){
-        $("#loading").hide();
-        $("#nav-welcome").show();
         // example: the section corresponding to the hash
         // 'contact' is 'nav-contact'
         var target = /#(.+)/.exec(hash)[1]; // ignore the '#' in the hash
@@ -18,14 +16,12 @@ var doWelcome = function(){
             // the email box is located.
             target_id = "nav-contact";
         }
-        scrollBottomToElement("#" + target_id, 500);
+        scrollBottomToElement("#" + target_id, 500, function(){
+            $("#loading").fadeOut(1000);
+        });
     }
     else{
         $("#loading").fadeOut(1000);
-        $("#nav-welcome").fadeIn(1000);
-        // I'm not fading in with a callback because I want the
-        // fades to occur together. '#loading' div is 'absolute' positioned
-        // so there will not be any 'jumping' of divs.
     }
 }
 
